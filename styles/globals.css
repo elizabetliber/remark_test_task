@@ -39,7 +39,7 @@ body {
     padding-top: 15px;
     padding-right: 10px;
     padding-left: 10px;
-    background-color: yellow;
+    background-color: #FFDD66;
     margin-top: 45px;
     text-align: center;
     border-radius: 7px;
@@ -73,8 +73,7 @@ body {
     margin-top: 40px;
     display: flex;
     max-width: 100%;
-    /*flex-direction: row;*/
-    flex-flow: row nowrap;
+    flex-direction: row;
 }
 .section__body-image {
     max-width: 100%;
@@ -99,4 +98,12 @@ body {
 
 .news__item-date {
     margin-top: 25px;
+}
+@media (max-width: 320px) {
+    .section__body {
+        flex-direction: column;
+    }
+    .section__body-images{
+        margin-right: 0px;
+    }
 }
