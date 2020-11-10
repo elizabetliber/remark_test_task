@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 export default function Home() {
   let imagesMap = [
@@ -13,14 +14,27 @@ export default function Home() {
       <div className="section__header">
         <div className="section__header-title">Предложения и акции</div>
         <div className="section__header-cards">
-          {imagesMap.map((el) => (
+          <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={125}
+            totalSlides={3}
+            visibleSlides={3}
+          >
+            <Slider>
+          {imagesMap.map((el, index) => (
+            <Slide index={index}>
             <div className="section__header-card">
               <Image className="section__header-image" src={el.image} width={848} height={424} />
               <div className="section__header-image-title">
                 {el.title}
               </div>
             </div>
+            </Slide>
           ))}
+            </Slider>
+                <ButtonBack>Back</ButtonBack>
+                <ButtonNext>Next</ButtonNext>
+              </CarouselProvider>
         </div>
         <div className="section__header-more">
           <a>Узнать больше</a>
