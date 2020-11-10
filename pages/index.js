@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Home() {
   let imagesMap = [
     {id: 1, image: "/image_1.png", title: 'Карта привилегий "Новый город"'},
@@ -13,7 +15,7 @@ export default function Home() {
         <div className="section__header-cards">
           {imagesMap.map((el) => (
             <div className="section__header-card">
-              <img className="section__header-image" src={el.image} />
+              <Image className="section__header-image" src={el.image} width={848} height={424} />
               <div className="section__header-image-title">
                 {el.title}
               </div>
@@ -26,7 +28,7 @@ export default function Home() {
       </div>
       <div className="section__body">
         <div className="section__body-images">
-          <img className="section__body-image" src="/image_4.png" alt="" />
+          <Image className="section__body-image" src="/image_4.png" alt="" width={993} height={324} />
         </div>
         <div className="news">
           <div className="news__item-title">Просторные квартиры с гардеробными </div>
