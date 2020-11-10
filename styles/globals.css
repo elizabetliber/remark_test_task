@@ -84,10 +84,10 @@ body {
 .section__body-images {
     margin-right: 25px;
     border-radius: 10px;
-    flex-grow: 5;
+    flex: 1;
 }
 .news{
-     flex-grow: 5;
+    flex: 1
  }
 .news__item-title{
     font-size: 27px;
