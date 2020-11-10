@@ -1,65 +1,47 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
 export default function Home() {
+  let imagesMap = [
+    {id: 1, image: "/image_1.png", title: 'Карта привилегий "Новый город"'},
+    {id: 2, image: "/image_2.png", title: 'Бесплатное такси в офис продаж Нового города'},
+    {id: 3, image: "/image_3.png", title: 'Квартиры с отделкой от застройщика'},
+  ]
+  
+  
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div className="section">
+      <div className="section__header">
+        <div className="section__header-title">Предложения и акции</div>
+        <div className="section__header-cards">
+          {imagesMap.map((el) => (
+            <div className="section__header-card">
+              <img className="section__header-image" src={el.image} />
+              <div className="section__header-image-title">
+                {el.title}
+              </div>
+            </div>
+          ))}
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <div className="section__header-more">
+          <a>Узнать больше</a>
+        </div>
+      </div>
+      <div className="section__body">
+        <div className="section__body-images">
+          <img className="section__body-image" src="/image_4.png" alt="" />
+        </div>
+        <div className="news">
+          <div className="news__item-title">Просторные квартиры с гардеробными </div>
+          <div className="news__item">
+            Жилой комплекс "Новый город" расположен в одном из самых развивающихся районов
+            Обнинск - Заовражье. Несмотря на близость к центру ( 5 минут езды до ТРК "Триумф Плаза"),
+            место здесь тихое и спокойное
+          </div>
+          <div className="news__item-date">
+            Архитектура и дизайн комплекса - яркий пример удачного сочетания классических традиций
+            строительства с современными материалами и технологиями. Территория микрорайона
+            разделена на ряд благоустроенных зон с детскимии игровыми площадками, спортивными тренажерами и прогулочными дорожками
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
