@@ -35,7 +35,7 @@ export default class Home extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
       responsive: [
         {
