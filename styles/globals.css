@@ -88,7 +88,7 @@ body {
     flex: 1
 }
 
-.news__item:first-child {
+.news__item-title {
     font-size: 27px;
     margin-top: 0px;
 

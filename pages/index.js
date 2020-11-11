@@ -125,7 +125,7 @@ export default class Home extends Component {
             />
           </div>
           <div className="news">
-            <div className="news__item">
+            <div className="news__item-title">
               Просторные квартиры с гардеробными→
             </div>
             <div className="news__item">
