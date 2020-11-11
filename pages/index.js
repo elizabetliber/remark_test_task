@@ -1,17 +1,13 @@
 import Image from "next/image";
-import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  Slide,
-  Slider,
-} from "pure-react-carousel";
-import useWindowSize from "../hooks/useWindowSize";
+import Slider from "react-slick"
 
 export default function Home() {
-  const { width } = useWindowSize();
+  
   let imagesMap = [
-    { id: 1, image: "/image_1.png", title: 'Карта привилегий "Новый город"' },
+    { id: 1,
+      image: "/image_1.png",
+      title: 'Карта привилегий "Новый город"'
+    },
     {
       id: 2,
       image: "/image_2.png",
@@ -23,22 +19,46 @@ export default function Home() {
       title: "Квартиры с отделкой от застройщика",
     },
   ];
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ]
+  };
   return (
     <div className="section">
       <div className="section__header">
         <div className="section__header-title">Предложения и акции</div>
         <div className="section__header-cards">
-          <CarouselProvider
-            naturalSlideWidth={100}
-            naturalSlideHeight={125}
-            totalSlides={3}
-            visibleSlides={width <= 320 ? 1 : 3}
-          >
-            <Slider>
+          <Slider{...settings}>
               {imagesMap.map((el, index) => (
-                <Slide index={index}>
-                  <div className="section__header-card">
+                  <div className="section__header-card" key={index}>
                     <Image
                       className="section__header-image"
                       src={el.image}
@@ -49,12 +69,8 @@ export default function Home() {
                       {el.title}
                     </div>
                   </div>
-                </Slide>
               ))}
             </Slider>
-            <ButtonBack>Back</ButtonBack>
-            <ButtonNext>Next</ButtonNext>
-          </CarouselProvider>
         </div>
         <div className="section__header-more">
           <a>Узнать больше</a>

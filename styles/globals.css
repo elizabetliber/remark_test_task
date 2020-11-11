@@ -43,18 +43,20 @@ body {
     margin-top: 45px;
     text-align: center;
     border-radius: 7px;
+
+}
+.section__header-more a:hover{
+    background-color: gold;
 }
 .section__header-more{
     max-width: 200px;
     margin: 0 auto;
 }
 .section__header-cards {
-    display: flex;
-    flex-direction: row;
 }
 
 .section__header-image {
-    max-width: 100%;
+
     border-radius: 10px;
 }
 
