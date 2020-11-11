@@ -16,8 +16,8 @@ body {
 }
 
 .section {
-    margin-right: 45px;
-    margin-left: 45px;
+    margin-right: 40px;
+    margin-left: 40px;
     margin-bottom: 30px;
 }
 
@@ -26,14 +26,13 @@ body {
 }
 
 
-
 .section__header-title {
     margin-top: 25px;
     margin-bottom: 25px;
-    font-size: 40px;
+    font-size: 32px;
 }
 
-.section__header-more a{
+.section__header-more a {
     display: block;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -45,18 +44,22 @@ body {
     border-radius: 7px;
 
 }
-.section__header-more a:hover{
+
+.section__header-more a:hover {
     background-color: gold;
 }
-.section__header-more{
+
+.section__header-more {
     max-width: 200px;
     margin: 0 auto;
 }
+
 .section__header-cards {
+
+    margin: 0 -15px;
 }
 
 .section__header-image {
-
     border-radius: 10px;
 }
 
@@ -66,17 +69,20 @@ body {
 
 .section__header-card {
     margin-right: 20px;
+    padding: 0 15px;
 }
 
 .section__header-card:last-child {
     margin-right: 0px;
 }
+
 .section__body {
     margin-top: 40px;
     display: flex;
     max-width: 100%;
     flex-direction: row;
 }
+
 .section__body-image {
     max-width: 100%;
     border-radius: 10px;
@@ -87,13 +93,16 @@ body {
     border-radius: 10px;
     flex: 1;
 }
-.news{
+
+.news {
     flex: 1
- }
-.news__item-title{
+}
+
+.news__item-title {
     font-size: 27px;
 
 }
+
 .news__item {
     margin-top: 25px;
 }
@@ -101,11 +110,29 @@ body {
 .news__item-date {
     margin-top: 25px;
 }
+
+.section__header-display {
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.section__header-img {
+    margin-top: 25px;
+
+}
+.button_1 + .button_2 {
+    margin-left: 9px;
+}
+.image_1 {
+    margin-right: 5px;
+}
+
 @media (max-width: 320px) {
     .section__body {
         flex-direction: column;
     }
-    .section__body-images{
+
+    .section__body-images {
         margin-right: 0px;
     }
 }

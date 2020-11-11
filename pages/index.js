@@ -1,9 +1,23 @@
+import React, { Component } from "react";
 import Image from "next/image";
 import Slider from "react-slick"
 
-export default function Home() {
+
+export default class Home extends Component{
+  constructor(props) {
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
   
-  let imagesMap = [
+  render() {
+    const imagesMap = [
     { id: 1,
       image: "/image_1.png",
       title: 'Карта привилегий "Новый город"'
@@ -20,7 +34,7 @@ export default function Home() {
     },
   ];
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -54,9 +68,20 @@ export default function Home() {
   return (
     <div className="section">
       <div className="section__header">
+        
+        <div className="section__header-display">
         <div className="section__header-title">Предложения и акции</div>
+        <div className="section__header-img">
+          <a className="button_1" >
+            <img src="/Subtract_1.png" onClick={this.previous}/>
+          </a>
+          <a className="button_2" onClick={this.next}>
+            <img src="/Subtract_2.png" alt=""/>
+          </a>
+        </div>
+        </div>
         <div className="section__header-cards">
-          <Slider{...settings}>
+          <Slider ref={c => (this.slider = c)} {...settings}>
               {imagesMap.map((el, index) => (
                   <div className="section__header-card" key={index}>
                     <Image
@@ -107,4 +132,5 @@ export default function Home() {
       </div>
     </div>
   );
+}
 }
