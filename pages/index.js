@@ -65,7 +65,7 @@ export default class Home extends Component {
     };
     return (
       <div className="section">
-        <div className="section__header">
+        <div>
           <div className="section__header-display">
             <div className="section__header-title">Предложения и акции</div>
             <div className="section__header-img-first">
@@ -125,8 +125,8 @@ export default class Home extends Component {
             />
           </div>
           <div className="news">
-            <div className="news__item-title">
-              Просторные квартиры с гардеробными{" "}
+            <div className="news__item">
+              Просторные квартиры с гардеробными→
             </div>
             <div className="news__item">
               Жилой комплекс "Новый город" расположен в одном из самых
@@ -134,7 +134,7 @@ export default class Home extends Component {
               центру ( 5 минут езды до ТРК "Триумф Плаза"), место здесь тихое и
               спокойное
             </div>
-            <div className="news__item-date">
+            <div className="news__item">
               Архитектура и дизайн комплекса - яркий пример удачного сочетания
               классических традиций строительства с современными материалами и
               технологиями. Территория микрорайона разделена на ряд

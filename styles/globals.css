@@ -16,11 +16,6 @@ body {
     margin-bottom: 30px;
 }
 
-.section__header {
-
-}
-
-
 .section__header-title {
     margin-top: 25px;
     margin-bottom: 25px;
@@ -93,16 +88,13 @@ body {
     flex: 1
 }
 
-.news__item-title {
+.news__item:first-child {
     font-size: 27px;
+    margin-top: 0px;
 
 }
 
 .news__item {
-    margin-top: 25px;
-}
-
-.news__item-date {
     margin-top: 25px;
 }
 
